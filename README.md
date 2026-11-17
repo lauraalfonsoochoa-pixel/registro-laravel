@@ -39,6 +39,7 @@ Después ejecuta:
 
 ```cmd
 composer dump-autoload
+composer check-platform-reqs
 php artisan config:clear
 php artisan migrate
 php artisan db:seed --class=DocenteSeeder
