@@ -7,9 +7,8 @@
     <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-3 mb-4">
         <div>
             <h1 class="h2 mb-1">Estudiantes registrados</h1>
-            <p class="text-secondary mb-0">Registro académico · sesión de {{ auth()->user()->email }}</p>
+            <p class="text-secondary mb-0">Registro académico</p>
         </div>
-        <form method="post" action="{{ route('logout') }}">@csrf<button class="btn btn-outline-secondary" type="submit">Cerrar sesión</button></form>
     </div>
 
     @if (session('aviso'))<div class="alert alert-success" role="status">{{ session('aviso') }}</div>@endif

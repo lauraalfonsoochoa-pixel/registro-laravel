@@ -12,7 +12,7 @@
 
 - **Responsable que aparece en la identidad Git local:** Laura Natalia Alfonso Ochoa. Confirmar con el docente si la entrega es individual o agregar aquí a los demás integrantes.
 - **Proyecto de partida:** el repositorio PHP anterior contiene el formulario y CRUD nativo.
-- **Migración Laravel:** se trabajaron rutas, controladores, modelo Eloquent, vistas Blade, migraciones, autenticación y validación con ayuda de un asistente de IA. La estudiante debe revisar el código y explicar su recorrido en la defensa.
+- **Migración Laravel:** se trabajaron rutas, controladores, modelo Eloquent, vistas Blade, migraciones y validación con ayuda de un asistente de IA. La aplicación abre directamente, sin solicitar usuario ni contraseña. La estudiante debe revisar el código y explicar su recorrido en la defensa.
 
 ## Cierre reflexivo para personalizar
 
@@ -26,4 +26,4 @@
 
 ## Pendiente antes de entregar
 
-Como el repositorio es privado, confirma que el docente tenga acceso. Invítalo como colaborador usando el usuario o correo que indique. No envíes `.env`, contraseñas, capturas de credenciales ni exportaciones de la base con datos personales.
+El repositorio es público y se puede compartir con el docente mediante su enlace. No envíes `.env` ni exportaciones de la base con datos personales.

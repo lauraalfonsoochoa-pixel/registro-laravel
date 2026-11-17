@@ -14,6 +14,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->call(DocenteSeeder::class);
+        // No se requieren cuentas para usar el registro de estudiantes.
     }
 }

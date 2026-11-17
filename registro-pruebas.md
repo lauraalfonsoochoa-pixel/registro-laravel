@@ -22,9 +22,9 @@
 | Búsqueda sin coincidencias | Muestra un resultado vacío comprensible. | Apareció “No hay estudiantes que coincidan con la búsqueda”. | Correcto |
 | Cancelar confirmación de eliminación | La fila permanece. | Abrir la confirmación no borró la fila. | Correcto |
 | Confirmar borrado de fila ficticia | Desaparece solo esa fila. | Se eliminó la fila de prueba y las tablas de ensayo quedaron sin estudiantes. | Correcto |
-| Ruta sin sesión / después de salir | Solicita acceso. | `/estudiantes` llevó al login sin sesión y tras cerrar sesión. | Correcto |
+| Acceso directo | No solicita usuario ni contraseña. | `/estudiantes` abre el registro directamente. | Correcto |
 | Persistencia en MySQL al reabrir | La fila permanece tras reiniciar el servidor. | En una copia limpia se reinició `artisan serve`; el registro ficticio seguía ahí. Luego se borró. | Correcto |
-| Instalación limpia | Composer, configuración, migraciones, seeder y rutas funcionan. | `git clone`, `composer install`, `key:generate`, `migrate`, `DocenteSeeder` y `route:list` finalizaron correctamente en la base independiente. | Correcto |
+| Instalación limpia | Composer, configuración, migraciones y rutas funcionan. | `git clone`, `composer install`, `key:generate`, `migrate` y `route:list` finalizaron correctamente en la base independiente. | Correcto |
 
 ## Límites que deben explicarse
 
