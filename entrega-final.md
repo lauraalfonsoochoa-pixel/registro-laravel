@@ -19,7 +19,7 @@
 
 **Decisión:** no copiar las cuentas ni los registros de la aplicación PHP anterior. La versión Laravel usa una base separada y el acceso se comprueba mediante `auth`.
 
-**Mejora futura:** alinear el proyecto con el modelo exacto del curso (incluido el campo `edad`) y con Laravel 13/PHP 8.3 si el docente lo exige.
+**Mejora futura:** alinear los demás campos con el modelo breve del curso y actualizar a Laravel 13/PHP 8.3 si el docente lo exige.
 
 **Reflexión personal — completar con tus palabras:** ¿qué parte comprendes mejor ahora?, ¿qué aprendiste al seguir el dato desde el formulario hasta MySQL?, ¿qué aporte hiciste tú y qué corregirías después?
 

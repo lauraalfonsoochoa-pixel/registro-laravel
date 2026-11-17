@@ -29,7 +29,7 @@
                             <div class="col-md-6"><label class="form-label" for="nombre">Nombre</label><input class="form-control" id="nombre" name="nombre" value="{{ old('nombre') }}" required minlength="2" maxlength="60"></div>
                             <div class="col-md-6"><label class="form-label" for="apellido">Apellido</label><input class="form-control" id="apellido" name="apellido" value="{{ old('apellido') }}" required minlength="2" maxlength="60"></div>
                         </div>
-                        <div class="mb-3 mt-3"><label class="form-label" for="fecha_nacimiento">Fecha de nacimiento</label><input class="form-control" id="fecha_nacimiento" name="fecha_nacimiento" type="date" value="{{ old('fecha_nacimiento') }}" max="{{ now()->toDateString() }}" required></div>
+                        <div class="mb-3 mt-3"><label class="form-label" for="edad">Edad</label><input class="form-control" id="edad" name="edad" type="number" value="{{ old('edad') }}" min="16" max="100" step="1" required></div>
                         <div class="mb-3"><label class="form-label" for="codigo">Código estudiantil</label><input class="form-control" id="codigo" name="codigo" value="{{ old('codigo') }}" required minlength="4" maxlength="20"></div>
                         <div class="mb-3"><label class="form-label" for="programa">Programa</label><select class="form-select" id="programa" name="programa" required><option value="">Selecciona un programa</option>@foreach ($programas as $opcion)<option value="{{ $opcion }}" @selected(old('programa') === $opcion)>{{ $opcion }}</option>@endforeach</select></div>
                         <div class="row g-3">
@@ -55,15 +55,15 @@
                     </form>
                     <div class="table-responsive">
                         <table class="table table-hover table-bordered align-middle">
-                            <thead><tr><th>Documento</th><th>Estudiante</th><th>Programa</th><th>Correo</th><th>Acciones</th></tr></thead>
+                            <thead><tr><th>Documento</th><th>Estudiante</th><th>Edad</th><th>Programa</th><th>Correo</th><th>Acciones</th></tr></thead>
                             <tbody>
                             @forelse ($filas as $estudiante)
                                 <tr>
-                                    <td>{{ $estudiante->id }}</td><td>{{ $estudiante->nombre }} {{ $estudiante->apellido }}</td><td>{{ $estudiante->programa }}<div class="small text-secondary">Semestre {{ $estudiante->semestre }}</div></td><td>{{ $estudiante->correo }}</td>
+                                    <td>{{ $estudiante->id }}</td><td>{{ $estudiante->nombre }} {{ $estudiante->apellido }}</td><td>{{ $estudiante->edad }}</td><td>{{ $estudiante->programa }}<div class="small text-secondary">Semestre {{ $estudiante->semestre }}</div></td><td>{{ $estudiante->correo }}</td>
                                     <td class="text-nowrap"><a class="btn btn-sm btn-outline-primary" href="{{ route('estudiantes.edit', $estudiante) }}">Editar</a> <a class="btn btn-sm btn-outline-danger" href="{{ route('estudiantes.confirmar', $estudiante) }}">Eliminar</a></td>
                                 </tr>
                             @empty
-                                <tr><td colspan="5" class="text-center text-secondary py-4">No hay estudiantes que coincidan con la búsqueda.</td></tr>
+                                <tr><td colspan="6" class="text-center text-secondary py-4">No hay estudiantes que coincidan con la búsqueda.</td></tr>
                             @endforelse
                             </tbody>
                         </table>

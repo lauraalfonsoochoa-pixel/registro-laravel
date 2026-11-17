@@ -12,7 +12,7 @@ return new class extends Migration
             $table->string('id', 15)->primary();
             $table->string('nombre', 60);
             $table->string('apellido', 60);
-            $table->date('fecha_nacimiento');
+            $table->unsignedTinyInteger('edad');
             $table->string('codigo', 20);
             $table->string('programa', 100);
             $table->unsignedTinyInteger('semestre');

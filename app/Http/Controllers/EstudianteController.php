@@ -83,7 +83,7 @@ class EstudianteController extends Controller
         $reglas = [
             'nombre' => ['required', 'string', 'min:2', 'max:60', 'regex:/^[\pL ]+$/u'],
             'apellido' => ['required', 'string', 'min:2', 'max:60', 'regex:/^[\pL ]+$/u'],
-            'fecha_nacimiento' => ['required', 'date', 'before_or_equal:today'],
+            'edad' => ['required', 'integer', 'between:16,100'],
             'codigo' => ['required', 'string', 'regex:/^[A-Za-z0-9-]{4,20}$/'],
             'programa' => ['required', 'string', Rule::in(config('programas'))],
             'semestre' => ['required', 'integer', 'between:1,10'],

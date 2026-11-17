@@ -11,8 +11,9 @@
 |---|---|---|---|
 | Alta válida con correo nuevo | Aparece una sola fila y vuelve al listado. | La fila ficticia apareció en el listado. | Correcto |
 | Correo ya registrado | Error de validación; no crea otra fila. | Rechazado con el mensaje de correo duplicado. Se añadió validación y un índice único en MySQL. | Correcto |
-| Edad 15 o edad no entera | Rechazo; no guarda el registro. | Esta versión no tiene campo `edad`; usa `fecha_nacimiento`. La prueba literal queda pendiente de alinear con lo solicitado por el curso. | Requiere ajuste |
-| Valor no entero en un campo numérico | Rechazo; no guarda. | El semestre con valor no entero fue rechazado. También se rechazó una fecha de nacimiento futura. | Correcto para los campos actuales |
+| Edad 15 | Rechazo; no guarda el registro. | Rechazada por la regla `between:16,100`. | Correcto |
+| Edad no entera | Rechazo; no guarda. | Rechazada por la regla `integer`. | Correcto |
+| Semestre no entero | Rechazo; no guarda. | El valor no entero fue rechazado por la validación del controlador. | Correcto |
 | Programa inventado | Error de validación. | El valor fuera del catálogo fue rechazado. | Correcto |
 | Editar conservando el propio correo | Guarda la fila sin marcar su correo como duplicado. | Se editó el registro conservando su correo. | Correcto |
 | ID inexistente | No altera otra fila; responde 404. | La ruta de edición para un ID ausente respondió 404. | Correcto |
@@ -25,6 +26,6 @@
 
 ## Límites que deben explicarse
 
-- El enunciado de clase pide `edad`; el proyecto PHP disponible contiene `fecha_nacimiento`. No se debe afirmar que se probó la regla literal de edad 15.
+- La versión Laravel usa `edad`; la versión PHP anterior conserva `fecha_nacimiento`.
 - El enunciado menciona Laravel 13/PHP 8.3; este equipo ejecuta Laravel 12.70.2/PHP 8.2.12.
 - La prueba de copia limpia usa el mismo runtime instalado en este equipo. No demuestra compatibilidad con todas las versiones de PHP.

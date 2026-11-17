@@ -18,7 +18,7 @@ class Estudiante extends Model
         'id',
         'nombre',
         'apellido',
-        'fecha_nacimiento',
+        'edad',
         'codigo',
         'programa',
         'semestre',
@@ -30,7 +30,7 @@ class Estudiante extends Model
     protected function casts(): array
     {
         return [
-            'fecha_nacimiento' => 'date',
+            'edad' => 'integer',
             'semestre' => 'integer',
         ];
     }
