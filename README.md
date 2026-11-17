@@ -51,6 +51,21 @@ Abre `http://127.0.0.1:8000`. La ruta raíz lleva al inicio de sesión. El seede
 6. Edita un registro. Abre la confirmación de borrado y cancélala; luego confirma el borrado.
 7. Cierra sesión y comprueba que `/estudiantes` vuelve a pedir acceso.
 
+## Resultados obtenidos en este equipo
+
+Comprobación manual realizada el 17/11/2026 con PHP 8.2.12, Laravel 12.70.2 y MySQL de XAMPP:
+
+| Hito | Resultado |
+|---|---|
+| Entorno | `composer check-platform-reqs` pasó. Las migraciones de Laravel y `estudiantes` se aplicaron en `webii_laravel`; `DocenteSeeder` creó la cuenta configurada en `.env`. |
+| Acceso | Sin sesión, `/estudiantes` muestra el inicio de sesión. Login y cierre de sesión funcionaron. |
+| Registro y reglas | El alta válida funcionó. Fecha futura, semestre fuera de rango, correo inválido y documento duplicado fueron rechazados. |
+| CRUD | Búsqueda y filtro por programa, edición, cancelación de la confirmación y eliminación confirmada funcionaron. |
+| Limpieza | Se borraron los registros temporales de comprobación; `webii_laravel.estudiantes` quedó vacío. |
+| Git | Rama `main`, dos commits locales, `.env` ignorado y árbol de trabajo limpio. Falta vincular el remoto de este proyecto Laravel. |
+
+La tabla anterior corresponde al proyecto disponible en `Miproyecto`, que usa documento, apellido y fecha de nacimiento, entre otros campos. La guía del Encuentro 15 menciona un modelo más corto con edad. No se importaron los cinco registros locales de `Miproyecto`.
+
 ## Git
 
 Revisa antes de confirmar cambios:
