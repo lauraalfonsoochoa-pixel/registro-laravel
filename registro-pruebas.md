@@ -2,17 +2,19 @@
 
 **Fecha:** 17/11/2026
 
-**Versión de código probada:** `ba26ab5` (Laravel 12.70.2, PHP 8.2.12)
+**Versión de código probada:** `c4d20e3` (Laravel 12.70.2, PHP 8.2.12)
 
 **Base:** MySQL local `webii_laravel`; copia limpia probada con `webii_laravel_defensa`.
+
+**Clon limpio con campo edad:** `be5a14a`; dependencias, migraciones y seeder completaron en una base de ensayo nueva.
 **Datos:** se usaron datos ficticios de ensayo y se eliminaron al finalizar.
 
 | Caso | Resultado esperado | Resultado obtenido | Estado |
 |---|---|---|---|
 | Alta válida con correo nuevo | Aparece una sola fila y vuelve al listado. | La fila ficticia apareció en el listado. | Correcto |
 | Correo ya registrado | Error de validación; no crea otra fila. | Rechazado con el mensaje de correo duplicado. Se añadió validación y un índice único en MySQL. | Correcto |
-| Edad 15 | Rechazo; no guarda el registro. | Rechazada por la regla `between:16,100`. | Correcto |
-| Edad no entera | Rechazo; no guarda. | Rechazada por la regla `integer`. | Correcto |
+| Edad 15 | Rechazo; no guarda el registro. | Rechazada con “La edad debe estar entre 16 y 100 años”. | Correcto |
+| Edad no entera | Rechazo; no guarda. | Rechazada con “La edad debe ser un número entero”. | Correcto |
 | Semestre no entero | Rechazo; no guarda. | El valor no entero fue rechazado por la validación del controlador. | Correcto |
 | Programa inventado | Error de validación. | El valor fuera del catálogo fue rechazado. | Correcto |
 | Editar conservando el propio correo | Guarda la fila sin marcar su correo como duplicado. | Se editó el registro conservando su correo. | Correcto |
@@ -26,6 +28,6 @@
 
 ## Límites que deben explicarse
 
-- La versión Laravel usa `edad`; la versión PHP anterior conserva `fecha_nacimiento`.
+- La versión Laravel usa `edad`; la versión PHP anterior conserva `fecha_nacimiento`. No se copian sus datos.
 - El enunciado menciona Laravel 13/PHP 8.3; este equipo ejecuta Laravel 12.70.2/PHP 8.2.12.
 - La prueba de copia limpia usa el mismo runtime instalado en este equipo. No demuestra compatibilidad con todas las versiones de PHP.

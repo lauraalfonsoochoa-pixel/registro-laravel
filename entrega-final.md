@@ -2,7 +2,8 @@
 
 - **Repositorio privado:** https://github.com/lauraalfonsoochoa-pixel/registro-laravel
 - **Rama:** `main`
-- **Commit de la aplicación probado:** `ba26ab5` — valida correos únicos y se probó el CRUD con MySQL.
+- **Commit de la aplicación probado:** `c4d20e3` — incluye edad, validación de correos únicos y mensajes específicos; probado con MySQL.
+- **Clon limpio de la versión con edad:** `be5a14a` — Composer, migraciones, seeder y rutas comprobados con una base nueva.
 - **Entorno local:** Laravel 12.70.2, PHP 8.2.12, Composer 2.10.3 y MySQL de XAMPP.
 - **Base usada por la aplicación:** `webii_laravel`; no se importaron registros personales del PHP anterior.
 - **Estado de pruebas:** ver [registro-pruebas.md](registro-pruebas.md). La instalación desde clon limpio también se comprobó.
