@@ -6,7 +6,7 @@ Migración del sistema PHP que está en `../Miproyecto`. Conserva documento, nom
 
 - PHP 8.2 o superior compatible con Laravel 12.
 - Composer.
-- SQLite para el modo local ya configurado, o MySQL si se ajusta `.env`.
+- XAMPP con MySQL activo.
 
 La guía del curso menciona Laravel 13 y PHP 8.3. Esta computadora tiene Laravel 12.70.2 y PHP 8.2.12, así que este proyecto conserva la instalación que ya funciona. Si el docente exige Laravel 13, habrá que actualizar PHP antes de cambiar la versión del framework.
 
@@ -17,11 +17,16 @@ Desde esta carpeta:
 ```cmd
 composer install
 copy .env.example .env
-if not exist database\database.sqlite type nul > database\database.sqlite
 php artisan key:generate
 ```
 
-Edita `.env` y configura `DOCENTE_EMAIL` y `DOCENTE_CLAVE` con credenciales solo locales. `.env` está excluido de Git. Para SQLite, deja `DB_CONNECTION=sqlite`; para MySQL configura `DB_CONNECTION=mysql`, `DB_HOST`, `DB_PORT`, `DB_DATABASE`, `DB_USERNAME` y `DB_PASSWORD`.
+El `.env.example` ya configura MySQL de XAMPP con la base `webii_laravel`. Edita `.env` y configura `DOCENTE_EMAIL` y `DOCENTE_CLAVE` con credenciales solo locales. `.env` está excluido de Git. Si vas a usar SQLite en vez de MySQL, cambia `DB_CONNECTION=sqlite` y crea el archivo con `if not exist database\database.sqlite type nul > database\database.sqlite`.
+
+Antes de migrar, inicia MySQL desde XAMPP y crea la base vacía:
+
+```cmd
+C:\xampp\mysql\bin\mysql.exe -u root -e "CREATE DATABASE IF NOT EXISTS webii_laravel CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
+```
 
 Después ejecuta:
 
