@@ -101,6 +101,9 @@ class EstudianteController extends Controller
             'id.regex' => 'El documento debe tener entre 6 y 15 números.',
             'programa.in' => 'Selecciona un programa válido.',
             'correo.unique' => 'Ese correo ya está registrado.',
+            'edad.required' => 'La edad es obligatoria.',
+            'edad.integer' => 'La edad debe ser un número entero.',
+            'edad.between' => 'La edad debe estar entre 16 y 100 años.',
         ]);
     }
 }
